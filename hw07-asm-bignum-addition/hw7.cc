@@ -2,6 +2,8 @@
 
 using namespace std;
 
+extern void add128(BigNum& a, BigNum& b, BigNum& c);
+
 int main() {
 	BigNum b1(3); // 0 0 0 3
 	BigNum b2(5); // 0 0 0 5
@@ -14,7 +16,8 @@ int main() {
 	 */
 	cout << b3 << '\n'; // print out the answer!!
 
-	const uint32_t ULONG_MAX = 4294967295;
+	uint32_t ULONG_MAX = 4294967295;
+
 	BigNum b5(ULONG_MAX);
 	BigNum b6(1);
 	BigNum b7;

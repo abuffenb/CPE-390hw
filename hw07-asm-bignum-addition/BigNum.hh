@@ -5,8 +5,8 @@
 class BigNum {
 private:
 	// 1234
-	uint32_t a, b, c, d; // a is the high order part
 public:
+	uint32_t a, b, c, d; // a is the high order part
 	BigNum() {}
 	BigNum(uint32_t v) : a(0), b(0), c(0), d(v) {}
 	
