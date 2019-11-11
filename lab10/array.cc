@@ -10,6 +10,6 @@ extern void addelement(int X[],int len);
 
 	addelement(X, len);
 
-	cout << X[0]," ", X[1], " ", X[2];
+	cout << X[0] << " " << X[1] <<" " << X[2];
 
 	return(0); }
