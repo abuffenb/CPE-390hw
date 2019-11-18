@@ -24,22 +24,19 @@ _Z5clearii:
 _Z4testii:
 	mov r2, #1
 	lsl r2, r1
-	tst r0, r2
-	bne        
+	tst r0, r2       
 	and r3,r0,r2
 	cmp r3, r3
-
+	bx lr
 
 _Z6toggleii:
 
 	mov	r2, #1
 	lsl     r2, r1
 	eor     r0, r2
-
-	
-	
-
-	
-
-
-
+	mov	r0, #108
+	lsl	r1, r0, #3
+	lsr	r2, r0, #1
+	mov	r0, #5 
+	lsr	r0, #1
+	bx lr
