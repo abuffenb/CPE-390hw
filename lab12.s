@@ -6,15 +6,15 @@ mov r2, #0
 
 .tst:
 tst r1, #1
-beq .notprime
+bne .noteven
 
-lsl r0, #1	@part if prime
+lsl r0, #1	@part if even
 lsr r1, #1
 cmp r1, #0
 bne .tst
 bx lr
 
-.notprime:
+.noteven:
 add r2, r0
 lsl r0, #1
 lsr r1, #1
