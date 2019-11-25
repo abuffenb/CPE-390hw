@@ -1,3 +1,8 @@
+	@Author: Allison Buffenbarger
+	@I pledge my honor that I have abided by the Stevens Honor System.
+	@I worked on this in lab with Sarah Bertussi. -Allison Buffenbarger
+
+
 	.global _Z10dotproductPdS_
 
 _Z10dotproductPdS_:
