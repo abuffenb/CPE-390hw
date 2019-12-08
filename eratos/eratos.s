@@ -78,7 +78,7 @@ _Z3eraPjj:
 
 	@need to point to word we're on
 	@word = number/32 = number LSR 5 = j/32
-	@lsr r5, r4, #5  >>>> @r5=word we're on
+	lsr r5, r4, #5  >>>> @r5=word we're on
 
 	@to find which bit in word that we're on
 	@j mod 32 = bit number
