@@ -25,7 +25,7 @@ _Z3eraPjj:
 	@r3=0xFFFFFFFF
 	@r4=(r1+31)/32=number of words
 
-	ldr r3, =0xFFFFFFFF	@r3=0xFFFFFFFF
+	ldr r3, =#0xFFFFFFFF	@r3=0xFFFFFFFF
 	add r4, r1, #31		@r4=r1+31
 	lsr r4, #5		@r4=(r1+31)/32
 
