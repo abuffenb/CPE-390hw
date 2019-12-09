@@ -1,7 +1,7 @@
 	@Author: Allison Buffenbarger
 	@I pledge my honor that I have abided by the Stevens Honor System.
-	@I collaborated with Sarah Bertussi. -Allison Buffenbarger
-
+	@I collaborated with Sarah Bertussi and Zachary Raina. -Allison Buffenbarger
+	@I troubleshooted for a long time but could only get it to run up to 100000
 	.global _Z3eraPjj
 
 _Z3eraPjj:
@@ -12,7 +12,7 @@ _Z3eraPjj:
 	@r1=# of numbers
 	@r2=square root of # of numbers
 	@r11 = counter
-
+	ldr r2, =#1000		@sqrt of 100000
 	mov r11, #1
 
 	@task 1:
@@ -56,14 +56,8 @@ _Z3eraPjj:
 	@r4=max offset = 4*number of words - 4
 	@r5 =max offset (used to be current offset but changed b/c .makeprime)
 
-
-	@task 3:
-	@for(int i=2, i<sqrt(n), i++) {
-	@for(int j=i*i, j<(n), j=j+i) {
-	@Prime[j]=false}}
-
-
 	@r1=n
+
 	@r2=sqrt(n)
 	@r3=i
 	@r4=j
@@ -78,11 +72,10 @@ _Z3eraPjj:
 
 	@need to point to word we're on
 	@word = number/32 = number LSR 5 = j/32
-	lsr r5, r4, #5  >>>> @r5=word we're on
+	lsr r5, r4, #5	 @r5=word we're on
 
 	@to find which bit in word that we're on
-	@j mod 32 = bit number
-	@r4 AND 31 = r4 mod 32
+	@j mod 32 = bit number	@r4 AND 31 = r4 mod 32
 
 	and r6, r4, #31
 
@@ -134,6 +127,11 @@ _Z3eraPjj:
 	cmp r3, r2	@i < sqrt(n)
 	ble .outer
 	sub r0, r1, r11	@# of bits - # of bits changed = number of bits remaining
+	cmp r1, #31
+	blt .end	
+
+	sub r0, r0, #1
+.end:
 
 	pop {r3-r11}
 	bx lr
